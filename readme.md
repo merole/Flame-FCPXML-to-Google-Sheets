@@ -8,9 +8,14 @@ TENTO SKRIPT FUNGUJE POUZE PRO WINDOWS 10+
 - spusťte skrip run.ps1 podle specifikací, které získáte spuštěním příkazu v apliakci PowerShell
   > Get-help ./run.ps1 -Detailed
 ### Úprava v google sheets
-- Přidejte do google sheet script z apps_script.js
-- - Zkopírujte obsah souboru do pole v Rozšíření > Apps script
-- - Znovu načtěte tabulku, nahoře by se mělo objevit tlčítka Base64 to jpg
-- - Zmáčkněte execute
-- - Pozor! Je důležité, aby base64 stringy byly v řádku D, ve kterém není nic jiného a aby řádek E byl prázdný. Velikost obrázku je cca 100x200, upravte velikost buňky předem alesponň na tolik pixelů. (Pravé tlačítko na číslo sloupce/řádku > Změnit velikost řádku)
-- - Poznámka: pokud by s tímto krokem byl problém jako například, že v řádku D už je něco jiného a nejde to smazat napište Erikovi (erik.sab18@gmail.com)
+- **Pozor!** Je důležité, aby v řádku s base64 stringami nebylo nic jiného a aby vedlejší řádek byl prázdný. Velikost obrázku je cca 100x200, upravte velikost buňky předem alesponň na tolik pixelů. (Pravé tlačítko na číslo sloupce/řádku > Změnit velikost řádku)
+- Přidejte do google sheet skript z `apps_script.js`
+  - Zkopírujte obsah souboru do pole v Rozšíření > Apps script
+  - Pokud jste neupravovali hodnotu `X` ani `Y` pro `run.ps1`, soubour neměňte. Pokud jste zvolili jiný sloupec nebo řádek změňte honotu `Let X = <>` Čísluje se od jedné, tz. pro sloupec *A* by byl `1`. **Pokud** nechcete, aby byly vytvořeny obrázky do řádků, kde už jsou, nastavte `Y`na stejnou hodnotu jako při spuštění `run.ps1`.
+  - Znovu načtěte tabulku pomocí tlačítka refresh v prohlížeči, nahoře by se mělo objevit tlčítka *Base64 to jpg*
+  - Zmáčkněte *Execute*
+  - Znovu obnovte tabulku, všechny obrázky by se měli načíst
+### Doporučení pro formátování
+- Řádek s base64 stringami nastavte na *Formát -> Obtékání -> Ustřihávání*
+- Náhledy jsou OverGrid obrázky, neposouvají se tudíž s buňkou, ani nereagují na jakékoliv formátování buňky. Nastavte proto velikost buňek předem.
+- Zbytek outputů nastavte na zarovnání doprostřed v obou osách

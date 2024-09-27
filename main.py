@@ -178,7 +178,7 @@ def main():
             raise HttpError
         tries += 1
         values_added = add_values(service_sheets,
-                spreadsheet.get("spreadsheetId"),
+                spreadsheet,
                 f"{BEGINNING_CELL_X}{BEGINNING_CELL_Y}:{chr(ord(BEGINNING_CELL_X)+3)}{int(BEGINNING_CELL_Y)+len(cell_data)}",
                 cell_data)
 
