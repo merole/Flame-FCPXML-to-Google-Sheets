@@ -130,7 +130,7 @@ def main():
     service_sheets = build("sheets", "v4", credentials=creds)
     
     # Find list of clips in project, see the .fcpxml file
-    tree = ET.parse(f"{os.path.join(XML_FOLDER_DIR, XML_FOLDER)}/{XML_FOLDER}.fcpxml")
+    tree = ET.parse(f"{os.path.join(XML_FOLDER_DIR, XML_FOLDER, XML_FOLDER)}.fcpxml")
     project = tree.getroot().find("library").find("event").find("project")
     assert project.attrib["name"] == XML_FOLDER, "Bad XML file name"
     assert len(project.findall("sequence")) == 1, "Multiple sequences in folder, napis erikovi"
