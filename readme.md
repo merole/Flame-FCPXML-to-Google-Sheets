@@ -1,4 +1,4 @@
-# XML to spreadsheet
+# FCPXML to Google Sheets (Flame generated XML to Google sheets)
 ## O repozitáři
 - Tento repozitář obsahuje PowerShell a Python skript. Dále obsahuje také soubor apps_script.js, který není určen pro spouštění nýbrž kopírování. Obsahuje také spustitelný soubor ffmpeg.exe
 - Pro spuštění skriptu je potřebná instalace Pythonu
