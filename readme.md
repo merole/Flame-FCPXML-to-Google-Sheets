@@ -8,8 +8,8 @@
 - Author: Erik Sabol, erik.sab18@gmail.com, neváhejte mě kontaktovat s jakýmikoliv problémy 
 Proveďte následující kroky pro parsování vašeho xml souboru do lidsky čitelné formy v Google Sheets.
 ### Vytvoření Google projektu 
-- Vytvoř Google cloud projekt ![Zde](https://developers.google.com/workspace/guides/create-project)
-- Postupujte podle návodu ![Zde](https://developers.google.com/workspace/guides/create-project)
+- Vytvoř Google cloud projekt [Zde](https://developers.google.com/workspace/guides/create-project)
+- Postupujte podle návodu [Zde](https://developers.google.com/workspace/guides/create-project)
 - Pouze kroky
   - Set up your environment
   - Configure the OAuth consent screen
