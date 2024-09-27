@@ -45,8 +45,11 @@ param(
   [int32]$y = 1,
   [string]$out_file = "first_frames"
 )
-$input_list = $xml_folder_dir, $sheet_id, $x, $y, $out_file
 
+if ($xml_folder_dir -eq "") {
+	$xml_folder_dir = (Get-Item .).FullName
+}
+$input_list = $xml_folder_dir, $sheet_id, $x, $y, $out_file
 $p = &{python -V} 2>&1
 # check if an ErrorRecord was returned
 if($p -is [System.Management.Automation.ErrorRecord]){
@@ -62,7 +65,7 @@ if ($error_output -like $re) {
 }
 
 $test = $false
-foreach ($item in (Get-ChildItem)) {
+foreach ($item in (Get-ChildItem $xml_folder_dir)) {
   if ($item -like $xml_folder) {
     $test = $true
   }
@@ -74,15 +77,15 @@ foreach ($item in (Get-ChildItem)) {
 if ($test -eq $true) {
   Write-Host Proceeding to extract frames
 } else {
-  throw [System.IO.FileNotFoundException] "RB_015 missing or files already extracted"
+  throw [System.IO.FileNotFoundException] "$xml_folder missing or files already extracted"
 }
 
 mkdir first_frames > $null
-foreach ($clip in Get-ChildItem -Path ".\RB_015\MEDIA" -Name) {
+foreach ($clip in Get-ChildItem -Path "$xml_folder_dir\$xml_folder\MEDIA" -Name) {
   .\ffmpeg\ffmpeg.exe `
-  -i "RB_015\MEDIA\$($clip)" -ss "00:00:00" `
+  -i "$xml_folder_dir\$xml_folder\MEDIA\$($clip)" -ss "00:00:00" `
   -vframes 1 `
-  ".\first_frames\$($clip.Substring(0, $clip.length - 3))jpg" `
+  "$xml_folder_dir\first_frames\$($clip.Substring(0, $clip.length - 3))jpg" `
   -hide_banner `
   -loglevel info
 }
