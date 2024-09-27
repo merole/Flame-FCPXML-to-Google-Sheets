@@ -3,6 +3,7 @@
 - Tento repozitář obsahuje PowerShell a Python skript. Dále obsahuje také soubor apps_script.js, který není určen pro spouštění nýbrž kopírování. Obsahuje také spustitelný soubor ffmpeg.exe
 - Pro spuštění skriptu je potřebná instalace Pythonu
   - Pokud nemáte python napište do PowerShell `python` a nainstalujte ze Storu
+- Terminál vypisuje podrobné chybové hlášky, sledujte je, debug hlášky v script.log
 - If by any chance you found this on the Internet and think it might be useful, just translate it using ChatGpt, cant be bothered
 - Author: Erik Sabol, erik.sab18@gmail.com, neváhejte mě kontaktovat s jakýmikoliv problémy 
 Proveďte následující kroky pro parsování vašeho xml souboru do lidsky čitelné formy v Google Sheets.
